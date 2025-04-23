@@ -1,0 +1,262 @@
+/* Menghapus margin dan padding default dari semua elemen, 
+   dan menggunakan box-sizing border-box untuk layout yang lebih akurat */
+   * {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* ======================== BODY ======================== */
+/* Mengatur font default dan line-height agar teks lebih mudah dibaca */
+body {
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+}
+
+/* ======================== CONTAINER ======================== */
+/* Membatasi lebar konten dan membuatnya berada di tengah */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* ======================== HEADER ATAS ======================== */
+/* Bagian paling atas dari halaman yang berisi judul utama dan tombol login/signup */
+.header-top {
+    background-color: #34495e; 
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+/* Menengahkan teks di bagian header-top */
+.header-top .title-section {
+    text-align: center;
+}
+
+/* Mengatur ukuran dan warna teks judul */
+.header-top .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ecf0f1; 
+}
+
+/* Mengatur ukuran dan warna teks subjudul */
+.header-top .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #bdc3c7; 
+}
+
+/* ======================== LOGIN/SIGN UP ======================== */
+/* Meletakkan link login dan sign up di pojok kanan atas */
+.header-top .auth-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Mengatur tampilan link login dan sign up */
+.header-top .auth-links a {
+    color: #ecf0f1;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: #2c3e50; 
+    border-radius: 5px;
+}
+
+/* Warna latar berubah saat hover */
+.header-top .auth-links a:hover {
+    background-color: #1abc9c; 
+}
+
+/* ======================== HEADER TENGAH ======================== */
+/* Menampilkan kategori dan search bar */
+.header-middle {
+    background-color: #7fb3d5; 
+    padding: 0.8rem 0;
+}
+
+/* Menampilkan daftar kategori */
+.header-middle .category-links {
+    display: inline-block;
+}
+
+/* Gaya link kategori */
+.header-middle .category-links a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Warna berubah saat hover */
+.header-middle .category-links a:hover {
+    color: #ffd700; 
+}
+
+/* Menampilkan search bar di samping kategori */
+.header-middle .search-bar {
+    display: inline-block;
+    margin-left: 30px;
+    vertical-align: middle;
+}
+
+/* Tampilan input search bar */
+.header-middle .search-bar input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    width: 700px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* ======================== HERO SECTION ======================== */
+/* Menampilkan gambar besar sebagai banner utama */
+.hero {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Mengatur ukuran gambar hero */
+.hero-img {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/* ======================== DAFTAR KONSER ======================== */
+/* Menampilkan daftar konser dalam bentuk grid */
+.concerts {
+    margin-top: 40px;
+    position: relative;
+}
+
+/* Menyusun kartu konser menjadi grid */
+.concert-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Mengatur tampilan setiap kartu konser */
+.concert-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Mengatur gambar di dalam kartu konser */
+.concert-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Mengatur informasi konser seperti judul dan tanggal */
+.concert-info {
+    margin-top: 15px;
+}
+
+.concert-info h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.concert-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* ======================== TOMBOL UMUM ======================== */
+/* Mengatur tampilan tombol button */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Mengatur warna tombol saat hover */
+button:hover {
+    background-color: #555;
+}
+
+/* ======================== TOMBOL LIHAT SEMUA ======================== */
+/* Mengatur tombol "See All" untuk melihat semua konser, diletakkan di atas daftar */
+.see-all-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background-color: transparent;
+    color: #2980b9;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Mengatur warna saat tombol di-hover */
+.see-all-btn:hover {
+    color: #1abc9c;
+}
+
+/* ======================== RESPONSIF ======================== */
+@media (max-width: 1024px) {
+    .concert-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .concert-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container {
+        width: 95%;
+    }
+    .header-top .title {
+        font-size: 1.8rem;
+    }
+    button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .concert-cards {
+        grid-template-columns: 1fr;
+    }
+    .concert-info p {
+        font-size: 0.8rem;
+    }
+    .concert-card {
+        padding: 15px;
+    }
+    .concert-card h3 {
+        font-size: 1rem;
+    }
+    button {
+        padding: 8px 12px;
+    }
+
+    .header-middle .search-bar input {
+        width: 200px;
+    }
+}
