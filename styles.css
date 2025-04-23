@@ -54,12 +54,32 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
+    display: flex; 
+    gap: 10px; 
+}
+
+/* Menyesuaikan tombol login/signup agar responsif */
+.auth-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4da6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Warna tombol saat hover */
+.auth-btn:hover {
+    background-color: #e04395;
 }
 
 /* Mengatur tampilan link login dan sign up */
 .header-top .auth-links a {
     color: #ecf0f1;
     margin: 0 10px;
+    position: relative;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
@@ -72,7 +92,6 @@ body {
 .header-top .auth-links a:hover {
     background-color: #1abc9c; 
 }
-
 /* ======================== HEADER TENGAH ======================== */
 /* Menampilkan kategori dan search bar */
 .header-middle {
@@ -82,7 +101,9 @@ body {
 
 /* Menampilkan daftar kategori */
 .header-middle .category-links {
-    display: inline-block;
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
 }
 
 /* Gaya link kategori */
@@ -104,15 +125,32 @@ body {
     display: inline-block;
     margin-left: 30px;
     vertical-align: middle;
+    width: 100%; /* Menyesuaikan lebar container */
 }
 
-/* Tampilan input search bar */
 .header-middle .search-bar input {
     padding: 8px 12px;
     font-size: 1rem;
-    width: 700px;
+    width: calc(100% - 120px); /* Menyesuaikan lebar dengan mengurangi lebar button */
     border: none;
     border-radius: 5px;
+    margin-right: 10px; /* Memberikan jarak antara input dan tombol */
+}
+
+/* ======================== BUTTON CARI ======================== */
+.search-bar button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #1abc9c;
 }
 
 /* ======================== HERO SECTION ======================== */
@@ -223,19 +261,47 @@ button:hover {
     }
 }
 
-
 @media (max-width: 768px) {
+    /* Membuat search bar dan tombol cari menyesuaikan lebar layar */
+    .header-middle .search-bar {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .header-middle .search-bar input {
+        width: 70%; /* Lebar input menyesuaikan layar */
+    }
+
+    .header-middle .search-bar button {
+        width: 20%; /* Lebar tombol cari menyesuaikan layar */
+    }
+
     .concert-cards {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .container {
         width: 95%;
     }
+
     .header-top .title {
         font-size: 1.8rem;
     }
+
     button {
         padding: 8px 16px;
+    }
+
+    .header-top .auth-links {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .auth-btn {
+        width: 100%; 
+        max-width: 300px; 
     }
 }
 
@@ -243,20 +309,28 @@ button:hover {
     .concert-cards {
         grid-template-columns: 1fr;
     }
+
     .concert-info p {
         font-size: 0.8rem;
     }
+
     .concert-card {
         padding: 15px;
     }
+
     .concert-card h3 {
         font-size: 1rem;
     }
+
     button {
         padding: 8px 12px;
     }
 
     .header-middle .search-bar input {
-        width: 200px;
+        width: 80%; /* Lebar input lebih besar pada layar kecil */
+    }
+
+    .header-middle .search-bar button {
+        width: 18%; /* Lebar tombol cari menyesuaikan dengan layar */
     }
 }
